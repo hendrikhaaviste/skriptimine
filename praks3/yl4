@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#Skript abiks, bussiekskursioonide korraldajale
+
+#Küsitakse reisijate arvu ja kohtade arvu bussis
+read -p "Sisestage reisijate arv bussis: " reisijad
+read -p "Sisestage kohtade arv ühes bussis: " kohad
+
+#Arvutatakse täidetud busside arv ja maha jäänud inimeste arv
+taidetud=$(($reisijad / $kohad))
+mahajaanud=$(($reisijad % kohad))
+
+#Väljastatakse tulemused
+echo "Täidetud busside arv on $taidetud"
+echo "Maha jäänud inimeste arv on $mahajaanud"
