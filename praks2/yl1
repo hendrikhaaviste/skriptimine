@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#Skript, mis tervitab kasutajat
+
+#Saame kasutajanime
+username=$(whoami)
+
+#Prindime tervituse
+echo -n "Tere, $username"
+echo "!"
