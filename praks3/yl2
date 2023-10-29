@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#Skript, mis testib muutujatega lauset
+
+#Muutuja nimega aasta ja väärtuseks 2016
+aasta=2016
+
+#Muutuja nimega president ja väärtuseks Kaljulaidi nimi
+president="Kersti Kaljulaid"
+
+#Muutuja nimega lause_keskosa
+lause_keskosa=". aastal valiti Eesti presidendiks "
+
+#Muutuja nimega lause, mis ühendab kõik eelmised
+lause="$aasta$lause_keskosa$president"
+
+#Väljastan muutuja lause
+echo $lause
