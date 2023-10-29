@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Küsib kasutaja käest nime ja tervitab
+
+#Kasutaja täisnime sisestus
+read -p "Sisesta oma ees- ja perenimi: " nimi
+
+#Jagab saadud nime kaheks ees ja perenimeks
+eesnimi=$(echo $nimi | awk '{print $1}')
+perenimi=$(echo $nimi | awk '{print $2}')
+
+#Tervitus sõnum kasutajale
+echo "Tere tulemast, $eesnimi $perenimi"
