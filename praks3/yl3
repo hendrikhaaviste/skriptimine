@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#EAP ajakulu arvutamine
+
+#Küsitakse ainepunktide ja nädalate arvu kasutajalt
+read -p "Sisestage ainepunktide arv: " ainepunktid
+read -p "Sisestage nädalate arv: " nadalad
+
+#Arvutatakse ühe nädala eeldatav ajakulu ülespoole ümardatult
+ajakulu=$(echo "scale=1;($ainepunktid * 26 / $nadalad)" | bc)
+ajakulu=$(printf "%.0f" $ajakulu)
+
+#Väljastatakse tulemus
+echo $ajakulu
