@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#Väljastab kasutajale kuupäeva ja ajaga seotud info
+
+#Prindime tänase kuupäeva
+formatted_date=$(date +"Today is %A, %B %d, %Y")
+echo "$formatted_date"
+
+#Prindime kellaaja
+date +"Time is %H:%M"
+echo
+
+#Näitame kalendrit
+date +"Calendar of %B %Y"
+cal | tail -n 7
