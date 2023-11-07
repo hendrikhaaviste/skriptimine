@@ -2,14 +2,16 @@
 
 #Skript, mis küsib täisarvu ja väljastab, kas on paaris või mitte
 
-#Täisarvu sisestus
-echo -n "Sisesta suvaline täisarv: "
-read arv
-
-#Paaris/paaritu kontroll
-if [ $((arv % 2)) -eq 0 ]; then
-	echo "Antud arv on paaris"
+#Kontrolitakse, kas käsureaparameetrite arv ei võrdu 1-ga
+if [ $# -ne 1 ]; then
+	echo "Käivita see skript koos arvuga, mille paarsust soovid kontrollida. Näiteks: $0 3"
 else
-	echo "Antud arv on paaritu"
+	arv=$1
+
+#Kontrollitakse paarsust
+	if [ $((arv % 2)) -eq 0 ]; then
+		echo "$arv on paaris"
+	else
+		echo "$arv on paaritu"
+	fi
 fi
-#kontroll on lõppenud
