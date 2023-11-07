@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#Skript tervitab teatud kellaaegadel ja näitab kasutaja nime + aega
+
+#Leiame kasutajanime ja hetke aja tundides
+
+kasutaja=$(whoami)
+aeg=$(date +%H)
+
+#Tingimused kellaegdele koos kasutajanimega
+
+if [[ ( $aeg -ge 0 && $aeg -lt 6 ) || ( $aeg -ge 22 && $aeg -lt 24 ) ]]; then
+	echo "Head ööd, $kasutaja!"
+elif [ $aeg -ge 6 ] && [ $aeg -lt 12 ]; then
+	echo "Tere hommikust, $kasutaja!"
+elif [ $aeg -ge 12 ] && [ $aeg -lt 18 ]; then
+	echo "Tere päevast, $kasutaja!"
+elif [ $aeg -ge 18 ] && [ $aeg -lt 22 ]; then
+	echo "Tere õhtust, $kasutaja!"
+else
+	echo "Viga tundide arvus"
+fi
