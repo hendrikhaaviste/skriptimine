@@ -3,13 +3,17 @@
 #Skript abiks, bussiekskursioonide korraldajale
 
 #Küsitakse reisijate arvu ja kohtade arvu bussis
-read -p "Sisestage reisijate arv bussis: " reisijad
-read -p "Sisestage kohtade arv ühes bussis: " kohad
+read -p "Sisesta reisijate arv: " reisijad
+read -p "Sisesta kohtade arv bussis: " kohad
 
 #Arvutatakse täidetud busside arv ja maha jäänud inimeste arv
 taidetud=$(($reisijad / $kohad))
 mahajaanud=$(($reisijad % kohad))
 
+#Kui ei mahu täidetud bussidesse, suurendatakse busside arvu ühe võrra
+if [ $mahajaanud -gt 0 ]; then
+	taidetud=$(($taidetud + 1))
+fi
+
 #Väljastatakse tulemused
-echo "Täidetud busside arv on $taidetud"
-echo "Maha jäänud inimeste arv on $mahajaanud"
+echo "Kokku on vaja $taidetud bussi"
