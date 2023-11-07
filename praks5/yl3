@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#Skript tervitab teatud kellaaegadel
+
+#Sisesta tundide arv
+
+echo -n "Sisesta aja väärtus (tundide arv): "
+read aeg
+
+#Tingimused kellaegdele
+
+if [[ ( $aeg -ge 0 && $aeg -lt 6 ) || ( $aeg -ge 22 && $aeg -lt 24 ) ]]; then
+	echo "Head ööd!"
+elif [ $aeg -ge 6 ] && [ $aeg -lt 12 ]; then
+	echo "Tere hommikust!"
+elif [ $aeg -ge 12 ] && [ $aeg -lt 18 ]; then
+	echo "Tere päevast!"
+elif [ $aeg -ge 18 ] && [ $aeg -lt 22 ]; then
+	echo "Tere õhtust!"
+else
+	echo "Viga tundide arvus"
+fi
