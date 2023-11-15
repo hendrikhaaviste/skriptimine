@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#Skript arvutab numbrite summat ja väljastab selle seletusega.
+
+#Sisestus käsk
+echo -n "Sisesta suvaline täisarv: "
+read arv
+
+#Muutuja, mis alustab 0st ning arvu, mis muudab originaalväärtust
+
+summa=0
+jaak=$arv
+
+#While tsükkel
+
+while [ $jaak -ne 0 ]
+do
+	num=$(($jaak % 10))
+	summa=$(($summa + $num))
+	jaak=$(($jaak / 10))
+done
+echo "Arvu $arv numbrite summa on $summa"
+
