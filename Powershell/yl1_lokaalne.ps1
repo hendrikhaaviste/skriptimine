@@ -33,7 +33,7 @@ $eesnimi = Read-Host "Sisesta oma eesnimi"
 
 # Kontrollime eesnime ladina tähtede osas
 while (-not (KontrolliNime $eesnimi)) {
-    Write-Host "Vigane sisestus! Eesnimi võib sisaldada ainult ladina tähti."
+    Write-Host "Eesnimi võib sisaldada ainult ladina tähti!"
     $eesnimi = Read-Host "Sisesta oma eesnimi"
 }
 
@@ -42,14 +42,14 @@ $perenimi = Read-Host "Sisesta oma perenimi"
 
 # Kontrollime perenime ladina tähtede osas
 while (-not (KontrolliNime $perenimi)) {
-    Write-Host "Vigane sisestus! Perenimi võib sisaldada ainult ladina tähti."
+    Write-Host "Perenimi võib sisaldada ainult ladina tähti!"
     $perenimi = Read-Host "Sisesta oma perenimi"
 }
 
 # Loome kasutajanime
 $kasutajanimi = LoomeKasutajanimi -eesnimi $eesnimi -perenimi $perenimi
 
-# Muudame veateadete kuvamise taset, et mitte kuvada punast errorit
+# Muudame veateadet, et mitte kuvada punast errorit
 $ErrorActionPreference = "Stop"
 
 # Kontrollime, kas kasutaja on juba olemas
